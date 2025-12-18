@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" fill="none">
+  <rect width="400" height="500" fill="#f1f5f9"/>
+  
+  <!-- Background elements -->
+  <circle cx="320" cy="80" r="60" fill="#e2e8f0"/>
+  <circle cx="60" cy="420" r="40" fill="#e2e8f0"/>
+  
+  <!-- Desk -->
+  <rect x="60" y="320" width="280" height="12" rx="6" fill="#64748b"/>
+  <rect x="80" y="332" width="8" height="80" fill="#64748b"/>
+  <rect x="312" y="332" width="8" height="80" fill="#64748b"/>
+  
+  <!-- Laptop -->
+  <rect x="120" y="240" width="160" height="100" rx="8" fill="#334155"/>
+  <rect x="128" y="248" width="144" height="80" rx="4" fill="#0f172a"/>
+  
+  <!-- Chart on screen -->
+  <rect x="140" y="260" width="120" height="56" fill="#1e293b"/>
+  <path d="M150 300 L170 290 L190 295 L210 275 L230 280 L250 265" stroke="#10b981" stroke-width="2" fill="none"/>
+  <circle cx="170" cy="290" r="3" fill="#10b981"/>
+  <circle cx="210" cy="275" r="3" fill="#10b981"/>
+  <circle cx="250" cy="265" r="3" fill="#10b981"/>
+  
+  <!-- Laptop base -->
+  <rect x="100" y="340" width="200" height="10" rx="2" fill="#475569"/>
+  
+  <!-- Person - body -->
+  <ellipse cx="200" cy="200" rx="35" ry="45" fill="#3b82f6"/>
+  
+  <!-- Person - head -->
+  <circle cx="200" cy="130" r="30" fill="#fcd34d"/>
+  
+  <!-- Person - face -->
+  <circle cx="190" cy="125" r="3" fill="#1e293b"/>
+  <circle cx="210" cy="125" r="3" fill="#1e293b"/>
+  <path d="M192 140 Q200 148 208 140" stroke="#1e293b" stroke-width="2" fill="none"/>
+  
+  <!-- Person - arms -->
+  <rect x="140" y="200" width="40" height="12" rx="6" fill="#3b82f6" transform="rotate(-20 160 206)"/>
+  <rect x="220" y="200" width="40" height="12" rx="6" fill="#3b82f6" transform="rotate(20 240 206)"/>
+  
+  <!-- Coffee cup -->
+  <rect x="290" y="300" width="20" height="25" rx="3" fill="#f59e0b"/>
+  <path d="M310 305 Q320 310 310 320" stroke="#f59e0b" stroke-width="3" fill="none"/>
+  
+  <!-- Coins/Money -->
+  <circle cx="80" cy="300" r="12" fill="#22c55e"/>
+  <text x="76" y="305" font-size="12" fill="white" font-weight="bold">$</text>
+  <circle cx="95" cy="290" r="10" fill="#16a34a"/>
+  
+  <!-- Floating elements -->
+  <rect x="300" y="180" width="30" height="20" rx="3" fill="#a855f7"/>
+  <text x="308" y="194" font-size="10" fill="white">%</text>
+  
+  <rect x="70" cy="160" width="25" height="18" rx="3" fill="#06b6d4"/>
+  <path d="M78 165 L82 172 L90 163" stroke="white" stroke-width="2" fill="none"/>
+</svg>
