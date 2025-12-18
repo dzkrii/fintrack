@@ -9,9 +9,9 @@ export const authConfig = {
       const isLoggedIn = !!auth?.user;
       const isOnLogin = nextUrl.pathname.startsWith('/login');
       
-      // If on login page and logged in, redirect to home
+      // If on login page and logged in, redirect to dashboard
       if (isOnLogin && isLoggedIn) {
-        return Response.redirect(new URL('/', nextUrl));
+        return Response.redirect(new URL('/dashboard', nextUrl));
       }
 
       // If on login page and NOT logged in, allow access
