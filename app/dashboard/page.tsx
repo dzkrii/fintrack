@@ -1,4 +1,5 @@
 import { auth } from '@/auth';
+import { LogoutButton } from '@/components/auth/logout-button';
 import { Wallet, TrendingUp, CreditCard, ArrowRightLeft } from 'lucide-react';
 
 export default async function DashboardPage() {
@@ -20,6 +21,7 @@ export default async function DashboardPage() {
             <div className="flex items-center gap-4">
               <span className="text-zinc-400 text-sm">Welcome back,</span>
               <span className="text-white font-medium">{userName}</span>
+              <LogoutButton />
             </div>
           </div>
         </div>
