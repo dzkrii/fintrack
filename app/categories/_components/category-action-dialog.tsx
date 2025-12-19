@@ -34,9 +34,7 @@ import { useCategories, type Category } from './categories-context';
 
 const formSchema = z.object({
   name: z.string().min(1, 'Category name is required.'),
-  type: z.enum(['INCOME', 'EXPENSE'], {
-    required_error: 'Please select a category type.',
-  }),
+  type: z.enum(['INCOME', 'EXPENSE']),
   icon: z.string().optional(),
 });
 
