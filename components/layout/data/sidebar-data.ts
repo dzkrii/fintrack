@@ -27,6 +27,16 @@ export const sidebarData: SidebarData = {
           icon: LayoutDashboard,
         },
         {
+          title: 'Categories',
+          url: '/categories',
+          icon: Tag,
+        },
+        {
+          title: 'Wallets',
+          url: '/wallets',
+          icon: Wallet,
+        },
+        {
           title: 'Transactions',
           url: '/transactions',
           icon: CreditCard,
@@ -35,17 +45,7 @@ export const sidebarData: SidebarData = {
           title: 'Budgets',
           url: '/budgets',
           icon: PiggyBank,
-        },
-        {
-          title: 'Wallets',
-          url: '/wallets',
-          icon: Wallet,
-        },
-        {
-          title: 'Categories',
-          url: '/categories',
-          icon: Tag,
-        },
+        },        
         {
           title: 'Reports',
           url: '/reports',
