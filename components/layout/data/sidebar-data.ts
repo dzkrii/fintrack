@@ -7,6 +7,7 @@ import {
   Settings,
   Bell,
   User,
+  Tag,
 } from 'lucide-react'
 import { type SidebarData } from '../types'
 
@@ -39,6 +40,11 @@ export const sidebarData: SidebarData = {
           title: 'Wallets',
           url: '/wallets',
           icon: Wallet,
+        },
+        {
+          title: 'Categories',
+          url: '/categories',
+          icon: Tag,
         },
         {
           title: 'Reports',
