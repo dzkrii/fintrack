@@ -36,8 +36,8 @@ export const sidebarData: SidebarData = {
           icon: PiggyBank,
         },
         {
-          title: 'Accounts',
-          url: '/accounts',
+          title: 'Wallets',
+          url: '/wallets',
           icon: Wallet,
         },
         {
