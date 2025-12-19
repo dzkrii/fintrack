@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { z } from 'zod';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { toast } from 'sonner';
 import { Button } from '@/components/ui/button';
 import {
   Dialog,
@@ -97,9 +98,14 @@ export function WalletActionDialog({
       await refreshWallets();
       form.reset();
       onOpenChange(false);
+      toast.success(
+        isEdit ? 'Wallet updated successfully!' : 'Wallet created successfully!'
+      );
     } catch (error) {
       console.error('Error saving wallet:', error);
-      // TODO: Show error toast
+      toast.error(
+        error instanceof Error ? error.message : 'Failed to save wallet'
+      );
     }
   };
 

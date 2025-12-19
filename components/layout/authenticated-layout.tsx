@@ -1,5 +1,6 @@
 'use client'
 
+import { signOut } from 'next-auth/react'
 import { cn } from '@/lib/utils'
 import { LayoutProvider } from '@/components/providers/layout-provider'
 import { SidebarInset, SidebarProvider } from '@/components/ui/sidebar'
@@ -11,10 +12,14 @@ type AuthenticatedLayoutProps = {
 }
 
 export function AuthenticatedLayout({ children, defaultOpen = true }: AuthenticatedLayoutProps) {
+  const handleSignOut = () => {
+    signOut({ callbackUrl: '/login' })
+  }
+
   return (
     <LayoutProvider>
       <SidebarProvider defaultOpen={defaultOpen}>
-        <AppSidebar />
+        <AppSidebar onSignOut={handleSignOut} />
         <SidebarInset
           className={cn(
             // Set content container, so we can use container queries

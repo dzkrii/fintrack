@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { toast } from 'sonner';
 import {
   AlertDialog,
   AlertDialogAction,
@@ -44,8 +45,11 @@ export function WalletDeleteDialog({
 
       await refreshWallets();
       onOpenChange(false);
+      toast.success(`Wallet "${currentWallet.name}" deleted successfully!`);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to delete wallet');
+      const errorMessage = err instanceof Error ? err.message : 'Failed to delete wallet';
+      setError(errorMessage);
+      toast.error(errorMessage);
     } finally {
       setIsDeleting(false);
     }
