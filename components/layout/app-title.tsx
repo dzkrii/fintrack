@@ -26,7 +26,7 @@ export function AppTitle() {
             className='flex items-center gap-2'
           >
             <div className={cn(
-              'flex h-8 w-8 items-center justify-center rounded-lg',
+              'flex aspect-square h-8 w-8 shrink-0 items-center justify-center rounded-lg',
               'bg-gradient-to-br from-emerald-500 to-teal-600'
             )}>
               <Wallet className='h-4 w-4 text-white' />
