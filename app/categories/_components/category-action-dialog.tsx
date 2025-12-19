@@ -70,7 +70,7 @@ export function CategoryActionDialog({
       if (currentCategory) {
         form.reset({
           name: currentCategory.name,
-          type: currentCategory.type,
+          type: currentCategory.type as 'INCOME' | 'EXPENSE',
           icon: currentCategory.icon || '',
         });
       } else {

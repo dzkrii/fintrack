@@ -12,7 +12,7 @@ import {
 export interface Category {
   id: string;
   name: string;
-  type: 'INCOME' | 'EXPENSE';
+  type: 'INCOME' | 'EXPENSE' | 'TRANSFER';
   icon: string | null;
   userId: string;
   createdAt: string;
