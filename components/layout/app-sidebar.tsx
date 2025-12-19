@@ -9,16 +9,13 @@ import {
   SidebarRail,
 } from '@/components/ui/sidebar'
 import { AppTitle } from './app-title'
-import { sidebarData } from './data/sidebar-data'
+import { sidebarData } from '@/components/layout/data/sidebar-data'
 import { NavGroup } from './nav-group'
 import { NavUser } from './nav-user'
+import { type User, type NavGroup as NavGroupType } from './types'
 
 type AppSidebarProps = {
-  user?: {
-    name: string
-    email: string
-    avatar: string
-  }
+  user?: User
   onSignOut?: () => void
 }
 
@@ -33,7 +30,7 @@ export function AppSidebar({ user, onSignOut }: AppSidebarProps) {
         <AppTitle />
       </SidebarHeader>
       <SidebarContent>
-        {sidebarData.navGroups.map((props) => (
+        {sidebarData.navGroups.map((props: NavGroupType) => (
           <NavGroup key={props.title} {...props} />
         ))}
       </SidebarContent>
