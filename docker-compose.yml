@@ -1,4 +1,24 @@
+version: '3.8'
+
 services:
+  # 1. Service Aplikasi Next.js (BARU)
+  web:
+    container_name: fintrack-web
+    build: .
+    restart: always
+    ports:
+      - "3001:3000" # Web bisa diakses di port 3001
+    environment:
+      # PENTING: Perhatikan hostnya adalah 'postgres' (nama service di bawah), bukan localhost
+      # Portnya tetap 5432 (port internal container), bukan 5433
+      - DATABASE_URL=postgresql://fatahul:postgres089@postgres:5432/fintrack
+      - NODE_ENV=production
+    depends_on:
+      - postgres
+    networks:
+      - fintrack-network
+
+  # 2. Service Database (YANG LAMA, dimodifikasi sedikit)
   postgres:
     image: postgres:15-alpine
     container_name: fintrack-postgres
@@ -8,9 +28,16 @@ services:
       POSTGRES_PASSWORD: postgres089
       POSTGRES_DB: fintrack
     ports:
-      - "5433:5432"
+      - "5433:5432" # Akses dari luar (DB Manager) tetap pakai port 5433
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    networks:
+      - fintrack-network
+
+# Setup Network agar container bisa saling panggil
+networks:
+  fintrack-network:
+    driver: bridge
 
 volumes:
   postgres_data:
