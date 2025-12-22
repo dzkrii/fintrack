@@ -7,7 +7,7 @@ services:
     build: .
     restart: always
     ports:
-      - "3001:3000" # Web bisa diakses di port 3001
+      - "3002:3000" # Web bisa diakses di port 3001
     environment:
       # PENTING: Perhatikan hostnya adalah 'postgres' (nama service di bawah), bukan localhost
       # Portnya tetap 5432 (port internal container), bukan 5433
