@@ -44,12 +44,11 @@ RUN adduser -S nextjs -u 1001
 
 # Copy file hasil build (standalone)
 COPY --from=builder /app/public ./public
-# Folder .next/standalone otomatis terbuat karena output: "standalone" di config tadi
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
+# Copy prisma schema (untuk migrasi)
 COPY --from=builder --chown=nextjs:nodejs /app/prisma ./prisma
-COPY --from=builder --chown=nextjs:nodejs /app/prisma.config.ts ./prisma.config.ts
 
 USER nextjs
 
