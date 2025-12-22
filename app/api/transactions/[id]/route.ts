@@ -202,7 +202,7 @@ export async function DELETE(request: Request, { params }: RouteParams) {
     }
 
     // Delete transaction and reverse wallet balance changes
-    await prisma.$transaction(async (tx) => {
+    await prisma.$transaction(async (tx: Prisma.TransactionClient) => {
       const oldType = existingTransaction.type;
       const oldAmount = existingTransaction.amount.toNumber();
       const oldWalletId = existingTransaction.walletId;

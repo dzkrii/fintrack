@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { auth } from '@/auth';
 import { prisma } from '@/lib/db';
+import { PrismaClient, Prisma } from '@prisma/client';
 
 // GET /api/transactions - Fetch all transactions for the authenticated user
 export async function GET(request: Request) {
@@ -157,7 +158,7 @@ export async function POST(request: Request) {
     }
 
     // Create transaction and update wallet balances in a transaction
-    const result = await prisma.$transaction(async (tx) => {
+    const result = await prisma.$transaction(async (tx: Prisma.TransactionClient) => {
       // Create the transaction
       const transaction = await tx.transaction.create({
         data: {
