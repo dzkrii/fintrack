@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { auth } from '@/auth';
 import { prisma } from '@/lib/db';
+import { Prisma } from '@prisma/client';
 
 type RouteParams = {
   params: Promise<{ id: string }>;
@@ -90,7 +91,7 @@ export async function PUT(request: Request, { params }: RouteParams) {
     }
 
     // Update transaction and adjust wallet balances in a transaction
-    const result = await prisma.$transaction(async (tx) => {
+    const result = await prisma.$transaction(async (tx: Prisma.TransactionClient) => {
       // First, reverse the original transaction's effect on balances
       const oldType = existingTransaction.type;
       const oldAmount = existingTransaction.amount.toNumber();
