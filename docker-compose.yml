@@ -28,7 +28,7 @@ services:
       POSTGRES_PASSWORD: postgres089
       POSTGRES_DB: fintrack
     ports:
-      - "5433:5432" # Akses dari luar (DB Manager) tetap pakai port 5433
+      - "5434:5432" # Akses dari luar (DB Manager) tetap pakai port 5433
     volumes:
       - postgres_data:/var/lib/postgresql/data
     networks:
