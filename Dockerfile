@@ -24,6 +24,8 @@ RUN npm install -g pnpm
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
+ARG DATABASE_URL="postgresql://dummy:dummy@localhost:5432/dummy"
+
 # Generate Prisma Client (PENTING: agar prisma client terbawa saat build)
 RUN npx prisma generate
 
